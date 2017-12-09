@@ -18,7 +18,7 @@ public class Element {
 	public BigDecimal c_speed = new BigDecimal("0");// 自消耗速度
 	public BigDecimal c_rate = new BigDecimal("1");// 自消耗速率
 	public BigDecimal cost;// 合成消耗1
-	public BigDecimal cost1;// 合成消耗2
+	public BigDecimal cost1;// 合成消耗2 
 	public BigDecimal cost2;// 合成消耗3
 	public BigDecimal cost3;// 合成消耗4
 	public BigDecimal reward;// 合成产量
