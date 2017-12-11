@@ -2,10 +2,8 @@ package com.example.worldmaker;
 
 import com.data.Element;
 import com.data.GameData;
-
 import android.content.Context;
 import android.os.Handler;
-import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,11 +13,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ListAdapter extends BaseAdapter {
+public class Main_ListAdapter extends BaseAdapter {
 	Context context;
 	Handler handler;
 
-	public ListAdapter(Context context, Handler handler) {
+	public Main_ListAdapter(Context context, Handler handler) {
 		this.context = context;
 		this.handler = handler;
 	}
@@ -66,7 +64,8 @@ public class ListAdapter extends BaseAdapter {
 		String str = GameData.get_eMode(GameData.getMAIN(id).value, 0);
 		String speed = GameData.get_eMode(GameData.MAIN_ELEMENT[id].speed
 				.multiply(GameData.MAIN_ELEMENT[id].rate), 2);
-		String cost = GameData.get_eMode(GameData.MAIN_ELEMENT[id].c_speed, 5);
+		String cost = GameData.get_eMode(GameData.MAIN_ELEMENT[id].c_speed
+				.multiply(GameData.MAIN_ELEMENT[id].c_rate), 5);
 		holder.name.setText(GameData.MAIN[id] + "£∫" + str + "(+" + speed
 				+ "/√Î)" + "(-" + cost + "/√Î)");
 		final int i = id;
