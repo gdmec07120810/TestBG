@@ -20,6 +20,7 @@ public class MainActivity extends Activity {
 	Button btn_main, btn_build, btn_other;
 	Main_ListAdapter main_adapter;
 	Build_ListAdapter build_adapter;
+	Other_ListAdapter other_adapter;
 	int k = 0;
 
 	@Override
@@ -36,6 +37,7 @@ public class MainActivity extends Activity {
 
 		main_adapter = new Main_ListAdapter(this, handler);
 		build_adapter = new Build_ListAdapter(this, handler);
+		other_adapter = new Other_ListAdapter(this, handler);
 
 		// 通过Handler启动线程
 		mHandler.post(mRunnable); // 发送消息，启动线程运行
@@ -63,6 +65,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
+				list.setAdapter(other_adapter);
 				k = 2;
 			}
 		});
@@ -75,7 +78,6 @@ public class MainActivity extends Activity {
 		public void handleMessage(Message msg) {
 			// TODO Auto-generated method stub
 			// DecimalFormat df = new DecimalFormat("0.##E0");
-			// rain = getNumber(String.valueOf(rain), "5000");
 
 			// rain = rain.add(speed).add(rain.multiply(y)); // 加 +
 			// bigDecimalA = bigDecimalA.subtract(bigDecimalB);// 减 -
@@ -87,16 +89,20 @@ public class MainActivity extends Activity {
 			if (k == 1) {
 				build_adapter.notifyDataSetChanged();
 			}
+			if (k == 2) {
+				other_adapter.notifyDataSetChanged();
+			}
 			StringBuffer bf = new StringBuffer();
 			bf.append("天气：" + GameData.W[GameData.WEATHER] + "(+"
 					+ GameData.RainSpeed[GameData.WEATHER] + "/秒)" + "雨水Rain："
 					+ GameData.get_eMode(GameData.Rain.value, 2));
 			bf.append("\n");
-			bf.append("木：" + GameData.get_eMode(GameData.Wood.value, 0) + "石  "
-					+ GameData.get_eMode(GameData.Stone.value, 0) + "火  "
-					+ GameData.get_eMode(GameData.Fire.value, 0) + "果  "
-					+ GameData.get_eMode(GameData.Fruit.value, 0) + "钱  "
-					+ GameData.get_eMode(GameData.Money.value, 0));
+			bf.append("木：" + GameData.get_eMode(GameData.Wood.value, 0) + "  石："
+					+ GameData.get_eMode(GameData.Stone.value, 0) + " 火："
+					+ GameData.get_eMode(GameData.Fire.value, 0) + "  果："
+					+ GameData.get_eMode(GameData.Fruit.value, 0) + "  钱："
+					+ GameData.get_eMode(GameData.Money.value, 0) + "  知："
+					+ GameData.get_eMode(GameData.Knowledge.value, 0));
 			textview.setText(bf.toString());
 		}
 	};
@@ -108,7 +114,7 @@ public class MainActivity extends Activity {
 			GameData.ElementCost();// 元素自消耗
 			handler.sendEmptyMessage(0);
 			// 每3秒执行一次
-			mHandler.postDelayed(mRunnable, 100); // 给自己发送消息，自运行
+			mHandler.postDelayed(mRunnable, 1000); // 给自己发送消息，自运行
 			if (GameData.Time < 60) {
 				GameData.Time++;
 			} else {

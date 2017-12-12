@@ -17,11 +17,9 @@ public class Element {
 	public BigDecimal rate;// 自增长速率
 	public BigDecimal c_speed = BigDecimal.valueOf(0);// 自消耗速度
 	public BigDecimal c_rate = BigDecimal.valueOf(1);// 自消耗速率
-	public BigDecimal cost;// 合成消耗1
-	public BigDecimal cost1;// 合成消耗2
-	public BigDecimal cost2;// 合成消耗3
-	public BigDecimal cost3;// 合成消耗4
+	public BigDecimal cost[] = new BigDecimal[5];// 合成消耗(0到4个)
 	public BigDecimal reward;// 合成产量
+	public boolean isOpen;// 功能激活开关
 
 	public Element() {
 
@@ -35,47 +33,4 @@ public class Element {
 		this.reward = BigDecimal.valueOf(re);
 	}
 
-	// 合成消耗1项
-	public Element(double v, double s, double r, double c, double re) {
-		this.value = BigDecimal.valueOf(v);
-		this.speed = BigDecimal.valueOf(s);
-		this.rate = BigDecimal.valueOf(r);
-		this.cost = BigDecimal.valueOf(c);
-		this.reward = BigDecimal.valueOf(re);
-	}
-
-	// 合成消耗2项
-	public Element(double v, double s, double r, double c, double c1, double re) {
-		this.value = BigDecimal.valueOf(v);
-		this.speed = BigDecimal.valueOf(s);
-		this.rate = BigDecimal.valueOf(r);
-		this.cost = BigDecimal.valueOf(c);
-		this.cost1 = BigDecimal.valueOf(c1);
-		this.reward = BigDecimal.valueOf(re);
-	}
-
-	// 合成消耗3项
-	public Element(double v, double s, double r, double c, double c1,
-			double c2, double re) {
-		this.value = BigDecimal.valueOf(v);
-		this.speed = BigDecimal.valueOf(s);
-		this.rate = BigDecimal.valueOf(r);
-		this.cost = BigDecimal.valueOf(c);
-		this.cost1 = BigDecimal.valueOf(c1);
-		this.cost2 = BigDecimal.valueOf(c2);
-		this.reward = BigDecimal.valueOf(re);
-	}
-
-	// 合成消耗4项
-	public Element(double v, double s, double r, double c, double c1,
-			double c2, double c3, double re) {
-		this.value = BigDecimal.valueOf(v);
-		this.speed = BigDecimal.valueOf(s);
-		this.rate = BigDecimal.valueOf(r);
-		this.cost = BigDecimal.valueOf(c);
-		this.cost1 = BigDecimal.valueOf(c1);
-		this.cost2 = BigDecimal.valueOf(c2);
-		this.cost3 = BigDecimal.valueOf(c3);
-		this.reward = BigDecimal.valueOf(re);
-	}
 }
