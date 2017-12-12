@@ -1,7 +1,11 @@
-package com.example.worldmaker;
+package adapter;
 
 import com.data.Element;
 import com.data.GameData;
+import com.example.worldmaker.R;
+import com.example.worldmaker.R.id;
+import com.example.worldmaker.R.layout;
+
 import android.content.Context;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -25,7 +29,13 @@ public class Build_ListAdapter extends BaseAdapter {
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return GameData.BUILD_ELEMENT.length;
+		int K = 0;
+		for (int i = 0; i < GameData.BUILD_ELEMENT.length; i++) {
+			if (GameData.BUILD_ELEMENT[i].isOpen) {
+				K++;
+			}
+		}
+		return K;
 	}
 
 	@Override
