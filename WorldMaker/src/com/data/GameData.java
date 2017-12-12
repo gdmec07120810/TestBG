@@ -33,7 +33,7 @@ public class GameData {
 		Knowledge = new Element(0, 0.0001, 1, 1);// 无合成消耗
 		BACE_ELEMENT = new Element[] { Rain, Fire, Wood, Stone, Fruit, Money,
 				Knowledge };
-		
+		Rain.isOpen = true;
 		// 主要
 		Seed = new Element(0, 1, 1, 1000);// 合成消耗雨水
 		Sapling = new Element(0, 0.05, 1, 1000);// 合成消耗种子
@@ -44,7 +44,7 @@ public class GameData {
 		Human = new Element(0, 0.02, 1, 1000);// 合成消耗猿类
 		MAIN_ELEMENT = new Element[] { Seed, Sapling, Tree, Fish, Duck, Monkey,
 				Human };
-		
+		Seed.isOpen = true;
 		// 建筑
 		Lumberyard = new Element(0, 0, 1, 1000);// 合成消耗木材、石材、人类
 		Quarry = new Element(0, 0, 1, 1000);// 合成消耗木材、石材、人类
@@ -66,65 +66,69 @@ public class GameData {
 
 	// TODO 元素自增长
 	public static void ElementAuto() {
+
 		if (Seed.isOpen) {
 			Seed.rate = Rain.value.multiply(BigDecimal.valueOf(0.0156852));// 种子产量：0.35/秒（×雨水量）
-			ElementFunction.Auto(Seed);
 		}
 		if (Sapling.isOpen) {
 			Sapling.rate = Seed.value.multiply(BigDecimal.valueOf(0.025362));// 树苗产量：0.005/秒（×种子量）
 			Sapling.rate = Sapling.rate.multiply(BigDecimal
 					.valueOf(SaplingSpeed[WEATHER]));// 天气影响树苗速率
-			ElementFunction.Auto(Sapling);
 		}
 		if (Tree.isOpen) {
 			Tree.rate = Sapling.value.multiply(BigDecimal.valueOf(0.01386));// 大树产量：0.005/秒（×树苗量）
-			ElementFunction.Auto(Tree);
 		}
 		if (Fish.isOpen) {
 			Fish.rate = Seed.value.multiply(BigDecimal.valueOf(0.02381));// 鱼苗产量：0.015/秒（×种子量）
-			ElementFunction.Auto(Fish);
 		}
 		if (Duck.isOpen) {
 			Duck.rate = Fish.value.multiply(BigDecimal.valueOf(0.006392));// 鸭子产量：0.0006/秒（×鱼苗量）
-			ElementFunction.Auto(Duck);
 		}
 		if (Monkey.isOpen) {
 			Monkey.rate = Duck.value.multiply(BigDecimal.valueOf(0.005326));// 猿类产量：0.0003/秒（×鸭子量）
-			ElementFunction.Auto(Monkey);
 		}
 		if (Human.isOpen) {
 			Human.rate = Monkey.value.multiply(BigDecimal.valueOf(0.0032852));// 人类产量：0.00002/秒（×猿类量）
-			ElementFunction.Auto(Human);
 		}
 		if (Rain.isOpen) {
 			Rain.speed = BigDecimal.valueOf(RainSpeed[WEATHER]);
-			ElementFunction.Auto(Rain);
 		}
 		if (Fire.isOpen) {
 			Fire.speed = BigDecimal.valueOf(0.00001);
-			ElementFunction.Auto(Fire);
 		}
 		//
 		if (Wood.isOpen) {
 			Wood.rate = Lumberyard.value.multiply(BigDecimal.valueOf(0.0875));// 木材产量：0.05/秒（×伐木场数量）
-			ElementFunction.Auto(Wood);
 		}
 		if (Stone.isOpen) {
 			Stone.rate = Quarry.value.multiply(BigDecimal.valueOf(0.0563));// 石材产量：0.03/秒（×采石场数量）
-			ElementFunction.Auto(Stone);
 		}
 		if (Fruit.isOpen) {
 			Fruit.rate = Sapling.value.multiply(BigDecimal.valueOf(0.0322));// 果实产量：0.0012/秒（×树苗量）
-			ElementFunction.Auto(Fruit);
 		}
 		if (Money.isOpen) {
 			Money.rate = Shop.value.multiply(BigDecimal.valueOf(0.153));// 货币产量：1.15/秒（×商业数量）
-			ElementFunction.Auto(Money);
 		}
 		if (Knowledge.isOpen) {
 			Knowledge.rate = Book.value.multiply(BigDecimal.valueOf(0.0185));// 知识产量：0.25/秒（×书籍量）
-			ElementFunction.Auto(Knowledge);
+
 		}
+		//
+		ElementFunction.Auto(Rain);
+		ElementFunction.Auto(Fire);
+		ElementFunction.Auto(Wood);
+		ElementFunction.Auto(Stone);
+		ElementFunction.Auto(Fruit);
+		ElementFunction.Auto(Money);
+		ElementFunction.Auto(Knowledge);
+		//
+		ElementFunction.Auto(Seed);
+		ElementFunction.Auto(Sapling);
+		ElementFunction.Auto(Tree);
+		ElementFunction.Auto(Fish);
+		ElementFunction.Auto(Duck);
+		ElementFunction.Auto(Monkey);
+		ElementFunction.Auto(Human);
 
 	}
 

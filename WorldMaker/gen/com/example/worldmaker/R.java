@@ -9,22 +9,6 @@ package com.example.worldmaker;
 
 public final class R {
     public static final class attr {
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static final int gif=0x7f010000;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static final int gifViewStyle=0x7f010002;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int paused=0x7f010001;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -38,25 +22,19 @@ containing a value of this type.
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int dayugif=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int tianqing=0x7f020002;
-        public static final int xiaoyu=0x7f020003;
-        public static final int zhongyu=0x7f020004;
+        public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f080000;
-        public static final int action_settings=0x7f08000b;
-        public static final int btn=0x7f080009;
-        public static final int btn_build=0x7f080006;
-        public static final int btn_main=0x7f080005;
-        public static final int btn_other=0x7f080007;
-        public static final int imageView1=0x7f080008;
-        public static final int listView1=0x7f080003;
-        public static final int mainTo=0x7f080004;
-        public static final int name=0x7f08000a;
-        public static final int textView1=0x7f080002;
-        public static final int weather_gif=0x7f080001;
+        public static final int action_settings=0x7f080009;
+        public static final int btn=0x7f080007;
+        public static final int btn_build=0x7f080004;
+        public static final int btn_main=0x7f080003;
+        public static final int btn_other=0x7f080005;
+        public static final int imageView1=0x7f080006;
+        public static final int listView1=0x7f080002;
+        public static final int name=0x7f080008;
+        public static final int textView1=0x7f080001;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -98,68 +76,4 @@ containing a value of this type.
          */
         public static final int AppTheme=0x7f060001;
     }
-    public static final class styleable {
-        /** Attributes that can be used with a CustomTheme.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #CustomTheme_gifViewStyle com.example.worldmaker:gifViewStyle}</code></td><td></td></tr>
-           </table>
-           @see #CustomTheme_gifViewStyle
-         */
-        public static final int[] CustomTheme = {
-            0x7f010002
-        };
-        /**
-          <p>This symbol is the offset where the {@link com.example.worldmaker.R.attr#gifViewStyle}
-          attribute's value can be found in the {@link #CustomTheme} array.
-
-
-          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.example.worldmaker:gifViewStyle
-        */
-        public static final int CustomTheme_gifViewStyle = 0;
-        /** Attributes that can be used with a GifView.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #GifView_gif com.example.worldmaker:gif}</code></td><td></td></tr>
-           <tr><td><code>{@link #GifView_paused com.example.worldmaker:paused}</code></td><td></td></tr>
-           </table>
-           @see #GifView_gif
-           @see #GifView_paused
-         */
-        public static final int[] GifView = {
-            0x7f010000, 0x7f010001
-        };
-        /**
-          <p>This symbol is the offset where the {@link com.example.worldmaker.R.attr#gif}
-          attribute's value can be found in the {@link #GifView} array.
-
-
-          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.example.worldmaker:gif
-        */
-        public static final int GifView_gif = 0;
-        /**
-          <p>This symbol is the offset where the {@link com.example.worldmaker.R.attr#paused}
-          attribute's value can be found in the {@link #GifView} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.example.worldmaker:paused
-        */
-        public static final int GifView_paused = 1;
-    };
 }

@@ -1,7 +1,11 @@
 package adapter;
 
+import com.data.Element;
 import com.data.GameData;
 import com.example.worldmaker.R;
+import com.example.worldmaker.R.id;
+import com.example.worldmaker.R.layout;
+
 import android.content.Context;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -69,14 +73,12 @@ public class Main_ListAdapter extends BaseAdapter {
 			holder = (ViewHolder) view.getTag();
 		}
 		String str = GameData.get_eMode(GameData.getMAIN(id).value, 0);
-
 		String speed = GameData.get_eMode(GameData.MAIN_ELEMENT[id].speed
 				.multiply(GameData.MAIN_ELEMENT[id].rate), 2);
 		String cost = GameData.get_eMode(GameData.MAIN_ELEMENT[id].c_speed
 				.multiply(GameData.MAIN_ELEMENT[id].c_rate), 3);
 		holder.name.setText(GameData.MAIN[id] + "£∫" + str + "(+" + speed
 				+ "/√Î)" + "(-" + cost + "/√Î)");
-
 		final int i = id;
 		holder.btn.setOnClickListener(new OnClickListener() {
 
