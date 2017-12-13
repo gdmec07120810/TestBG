@@ -1,11 +1,7 @@
 package adapter;
 
-import com.data.Element;
 import com.data.GameData;
 import com.example.worldmaker.R;
-import com.example.worldmaker.R.id;
-import com.example.worldmaker.R.layout;
-
 import android.content.Context;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -74,12 +70,11 @@ public class Other_ListAdapter extends BaseAdapter {
 		String str = GameData.get_eMode(GameData.getOTHER(id).value, 0);
 		String speed = GameData.get_eMode(GameData.OTHER_ELEMENT[id].speed
 				.multiply(GameData.OTHER_ELEMENT[id].rate), 2);
-		String cost = GameData.get_eMode(GameData.OTHER_ELEMENT[id].c_speed, 5);
+		String cost = GameData.get_eMode(GameData.OTHER_ELEMENT[id].c_speed, 3);
 		holder.name.setText(GameData.OTHER[id] + "£∫" + str + "(+" + speed
 				+ "/√Î)" + "(-" + cost + "/√Î)");
 		final int i = id;
 		holder.btn.setOnClickListener(new OnClickListener() {
-
 			@Override
 			public void onClick(View arg0) {
 				// TODO

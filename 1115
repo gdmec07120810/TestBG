@@ -1,3 +1,0 @@
-BigDecimal a = new  BigDecimal("1111111111111111111111111.1111", new MathContext(5, RoundingMode.HALF_UP));
-//构造BigDecimal时指定有效精度
-System.out.println(a.toEngineeringString());//然后使用toEngineeringString

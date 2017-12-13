@@ -1,11 +1,7 @@
 package adapter;
 
-import com.data.Element;
 import com.data.GameData;
 import com.example.worldmaker.R;
-import com.example.worldmaker.R.id;
-import com.example.worldmaker.R.layout;
-
 import android.content.Context;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -74,7 +70,7 @@ public class Build_ListAdapter extends BaseAdapter {
 		String str = GameData.get_eMode(GameData.getBUILD(id).value, 0);
 		String speed = GameData.get_eMode(GameData.BUILD_ELEMENT[id].speed
 				.multiply(GameData.BUILD_ELEMENT[id].rate), 2);
-		String cost = GameData.get_eMode(GameData.BUILD_ELEMENT[id].c_speed, 5);
+		String cost = GameData.get_eMode(GameData.BUILD_ELEMENT[id].c_speed, 3);
 		holder.name.setText(GameData.BUILD[id] + "£∫" + str + "(+" + speed
 				+ "/√Î)" + "(-" + cost + "/√Î)");
 		final int i = id;
